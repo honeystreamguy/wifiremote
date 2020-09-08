@@ -2,7 +2,7 @@
 set(COMPONENT_REQUIRES )
 set(COMPONENT_PRIV_REQUIRES )
 
-set(COMPONENT_SRCS "main.c provision.c")
+set(COMPONENT_SRCS "main.c provision.c discovery.c")
 set(COMPONENT_ADD_INCLUDEDIRS "")
 
 register_component()

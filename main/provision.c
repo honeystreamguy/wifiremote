@@ -6,7 +6,7 @@
    software is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
    CONDITIONS OF ANY KIND, either express or implied.
 */
-
+#include "provision.h"
 #include <stdio.h>
 #include <string.h>
 
@@ -260,7 +260,7 @@ void provision(void)
          * the resources of the manager. Since in this case de-initialization is triggered
          * by the default event loop handler, we don't need to call the following */
         wifi_prov_mgr_wait();
-        wifi_prov_mgr_deinit();
+        // wifi_prov_mgr_deinit();
     } else {
         ESP_LOGI(TAG, "Already provisioned, starting Wi-Fi STA");
 
@@ -274,11 +274,5 @@ void provision(void)
 
     /* Wait for Wi-Fi connection */
     xEventGroupWaitBits(wifi_event_group, WIFI_CONNECTED_EVENT, false, true, portMAX_DELAY);
-
-    /* Start main application now */
-    while (1) {
-        ESP_LOGI(TAG, "Hello World!");
-        vTaskDelay(1000 / portTICK_PERIOD_MS);
-
-    }
 }
+
