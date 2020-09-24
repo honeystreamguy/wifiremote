@@ -5,9 +5,11 @@
 
 void app_main(void)
 {
+	printf("hello world\n");
 	provision();
 
-	discoverTV();
+	uint32_t ipaddr = discoverTV();
+	printf("tv ip address is %x\n", ipaddr);
 
 	while(1){
 		// wait until something to process
